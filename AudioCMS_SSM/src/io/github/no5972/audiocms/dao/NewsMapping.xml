@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.github.no5972.audiocms.dao.NewsDao">
+    <select id="selectNewsByCid" resultType="io.github.no5972.audiocms.models.News">
+    	select * from news where cid=#{cid}
+    </select>
+    <select id="selectNewsByCidSplitByPages" resultType="io.github.no5972.audiocms.models.News">
+    	select * from news where cid=#{cid} order by createtime desc limit #{beginIndex}, #{pageSize}
+    </select>
+    <select id="selectAllNewsSplitByPages" resultType="io.github.no5972.audiocms.models.News">
+    	select * from news order by createtime desc limit #{beginIndex}, #{pageSize}
+    </select>
+    <select id="getPageCountByCid" resultType="int">
+    	select count(*)/#{pageSize} from news where cid=#{cid}
+    </select>
+    <select id="getAllPageCount" resultType="int">
+    	select count(*)/#{pageSize} from news
+    </select>
+    <insert id="addNews" parameterType="io.github.no5972.audiocms.models.News" useGeneratedKeys="true" keyProperty="id">
+    	insert into news set title=#{title}, content=#{content}, cid=#{cid}, createTime=#{createTime}
+    </insert>
+    <delete id="deleteNews">
+    	delete from news where id=#{id}
+    </delete>
+    <select id="selectNewsById" resultType="io.github.no5972.audiocms.models.News">
+    	select * from news where id=#{id}
+    </select>
+    <update id="updateNews">
+    	update news set cid=#{cid}, title=#{title}, content=#{content} where id=#{id}
+    </update>
+    <select id="selectSearchNewsSplitByPages" resultType="io.github.no5972.audiocms.models.News">
+    	<bind name="pattern" value="'%' + keywords + '%'" />
+    	select * 
+    	from news 
+    	where content like #{pattern} or title like #{pattern} 
+    	order by createtime desc 
+    	limit #{beginIndex}, #{pageSize}
+    </select>
+    <select id="selectSearchNewsPageCount" resultType="int">
+    	<bind name="pattern" value="'%' + keywords + '%'" />
+    	select count(*)/#{pageSize} 
+    	from news 
+    	where content like #{pattern} or title like #{pattern} 
+    	order by createtime desc 
+    </select>
+    <select id="selectSearchNewsCount" resultType="int">
+    	<bind name="pattern" value="'%' + keywords + '%'" />
+    	select count(*)
+    	from news 
+    	where content like #{pattern} or title like #{pattern} 
+    	order by createtime desc 
+    </select>
+</mapper>

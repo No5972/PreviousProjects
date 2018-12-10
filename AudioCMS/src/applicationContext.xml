@@ -1,0 +1,13 @@
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+>
+	<bean id="ManagerLoginAction" class="io.github.no5972.audiocms.actions.ManagerLoginAction"/>
+	<bean id="ManagerAction" class="io.github.no5972.audiocms.actions.ManagerAction"/>
+	<bean id="CategoryAction" class="io.github.no5972.audiocms.actions.CategoryAction"/>
+	<bean id="NewsAction" class="io.github.no5972.audiocms.actions.NewsAction"/>
+	<bean id="UploadJSONAction" class="io.github.no5972.audiocms.actions.UploadJSONAction"/>
+	<bean id="IndexAction" class="io.github.no5972.audiocms.actions.IndexAction"/>
+	<bean id="NewsSearchAction" class="io.github.no5972.audiocms.actions.NewsSearchAction"/>
+</beans>

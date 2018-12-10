@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.github.no5972.audiocms.dao.HeadlineDao">
+	<select id="selectHeadline" resultType="io.github.no5972.audiocms.models.Headline">
+		select * from headline
+	</select>
+	<update id="updateHeadline">
+		update headline set value=#{id}
+	</update>
+</mapper>

@@ -1,0 +1,4 @@
+#output table, #output td {
+	border: 1px solid;
+	border-collapse:collapse;
+}

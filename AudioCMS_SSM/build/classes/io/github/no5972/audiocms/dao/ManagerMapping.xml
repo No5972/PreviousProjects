@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.github.no5972.audiocms.dao.ManagerDao">
+    <select id="getLogin" resultType="io.github.no5972.audiocms.models.Manager">
+    	select * from manager where account=#{name} and password=#{password}
+    </select>
+    <update id="updatePassword">
+    	update manager set password=#{newPwd} where id=#{id}
+    </update>
+    <select id="getLoginCount" resultType="int">
+    	select number from manager where id=#{id}
+    </select>
+    <update id="updateLoginCount">
+    	update manager set number=#{newLoginCount} where id=#{id}
+    </update>
+    <select id="getManagerId" resultType="int">
+    	select id from manager where account=#{account}
+    </select>
+    <select id="getManagerAccount" resultType="java.lang.String">
+    	select account from manager where id=#{id}
+    </select>
+</mapper>

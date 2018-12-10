@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
+	"http://tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+	<rule>
+		<from>/news_(\w*).html$</from>
+		<to type="forward">/frontnews.do?id=$1</to>
+	</rule>
+	<rule>
+		<from>/newest_(\w*).html$</from>
+		<to type="forward">/newestnews.do?page=$1</to>
+	</rule>
+	<rule>
+		<from>/category_(\w*)/newslist_(\w*).html$</from>
+		<to type="forward">/frontcategory.do?cid=$1&amp;page=$2</to>
+	</rule>
+	<!-- <rule>
+		<from>/mobile$</from>
+		<to type="forward">/index!mobileIndex.action?pageNo=1&amp;topId=0</to>
+	</rule> -->
+	<rule>
+		<from>/mnews_(\d+).do$</from>
+		<to type="forward">/index!getMobileNewsById.action?news.id=$1&amp;isAutoPlay=0</to>
+	</rule>
+	<rule>
+		<from>/mnews_auto_(\d+).do$</from>
+		<to type="forward">/index!getMobileNewsById.action?news.id=$1&amp;isAutoPlay=1</to>
+	</rule>
+	<rule>
+		<from>/mobile_(\d+).do$</from>
+		<to type="forward">/index!mobileIndex.action?pageNo=1&amp;topId=$1</to>
+	</rule>
+</urlrewrite>

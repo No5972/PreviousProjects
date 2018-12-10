@@ -1,0 +1,12 @@
+a {
+	color: #00f;
+}
+
+#output table, #output td, #output th {
+	border: 1px solid;
+	border-collapse:collapse;
+}
+
+#output table {
+	width: 100%;
+}

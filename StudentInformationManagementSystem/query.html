@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+<title>欢迎进入学生信息管理系统</title>
+<link rel="stylesheet" href="switch.css" />
+<link rel="stylesheet" href="query.css" />
+</head>
+<body>
+<center><h1>欢迎进入学生信息管理系统</h1></center>
+<hr>
+<table style="width: 100%">
+<tr>
+	<td><a href="student.html"><div class="col">学生管理</div></a></td>
+	<td><a href="grade.html"><div class="col">成绩管理</div></a></td>
+	<td><a href="course.html"><div class="col">课程管理</div></a></td>
+	<td><a href="query.html"><div class="col">数据查询</div></a></td>
+	<td><a href="#"><div class="col">数据统计</div></a></td>
+</tr>
+</table>
+<hr>
+<input type="radio" id="qstudent" name="queries" /> 1. 查询学生：
+学号　　：<input type="text" id="qstudent_sno" style="width: 10%;" />
+姓名　　：<input type="text" id="qstudent_sname" style="width: 10%;" />
+性别　　：<select id="qstudent_ssex"><option value="">选择</option><option value="男">男</option><option value="女">女</option></select>
+出生日期：<input type="text" id="qstudent_sbirth" style="width: 10%;" />
+班级　　：<input type="text" id="qstudent_sclass" style="width: 10%;" />
+所在系　：<input type="text" id="qstudent_sdept" style="width: 10%;" />
+<br>
+<input type="radio" id="qcourse" name="queries" /> 2. 查询课程：
+课程号　：<input type="text" id="qcourse_cno" style="width: 10%;" />
+课程名　：<input type="text" id="qcourse_cname" style="width: 10%;" />
+学分　　：<input type="number" id="qcourse_ccredit" step="0.1" style="width: 10%;" />
+任课教师：<input type="text" id="qcourse_cteacher" style="width: 10%;" />
+<br>
+<input type="radio" id="qgrade" name="queries" /> 3. 查询成绩：
+学号　　：<input type="text" id="qgrade_sno" style="width: 10%;" />
+姓名　　：<input type="text" id="qgrade_sname" style="width: 10%;" />
+课程号　：<input type="text" id="qgrade_cno" style="width: 10%;" />
+课程名　：<input type="text" id="qgrade_cname" style="width: 10%;" />
+任课教师：<input type="text" id="qgrade_cteacher" style="width: 10%;" />
+<br><button id="submit">查看</button>
+<div id="output"></div>
+</body>
+<script src="jquery-3.1.1.js"></script>
+<script src="query.js?ver=2"></script>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<include file="struts-default.xml"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<package name="default" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="checkLogin" class="io.github.no5972.audiocms.tool.CheckLoginInterceptor"></interceptor>
+		</interceptors>
+		<action name="category" class="CategoryAction">
+			<result name="clist">/category_list.jsp</result>
+			<result name="addInput">/input_category.jsp</result>
+			<result type="redirectAction">
+				<param name="actionName">category</param>
+				<param name="namespace">/</param>
+				<param name="category.topId">0</param>
+			</result>
+			<result name="updateInput">/update_category.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="error">/category_list.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+		</action>
+		<action name="news" class="NewsAction">
+			<result name="main">/news.jsp</result>
+			<result name="details">/details_news.jsp</result>
+			<result name="update">/update_news.jsp</result>
+			<result type="redirectAction">
+				<param name="actionName">news</param>
+				<param name="namespace">/</param>
+				<param name="topId">${#session.topId}</param>
+				<param name="pageNo">${pageNo}</param>
+			</result>
+			<result name="addInput">/input_news.jsp</result>
+			<result name="login">/login.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+		</action>
+		<action name="manager" class="ManagerAction">
+			<result name="input">/login.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="updatePwd">/update_manager_pwd.jsp</result>
+			<result name="showLogin">/main.jsp</result>
+			<result name="error">/update_manager_pwd.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+		</action>
+		<action name="managerLogin" class="ManagerLoginAction">
+			<result name="input">/login.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="main">/main.jsp</result>
+
+		</action>
+		<action name="upload" class="UploadJSONAction">
+			<result name="success">/upload.jsp</result>
+		</action>
+		<action name="index" class="IndexAction">
+			<result name="success">/index.jsp</result>
+			<result name="index_news">/frontdetailed.jsp</result>
+			<result name="all_list">/index_allnews.jsp</result>
+			<result name="cnews_list">/index_news.jsp</result>
+			<result name="mobile_index">/index_m.jsp</result>
+			<result name="mobile_news">/newsm.jsp</result>
+		</action>
+		<action name="search" class="NewsSearchAction">
+			<result name="search_result">/search_result.jsp</result>
+			<result name="mobile_search_result">/search_m.jsp</result>
+		</action>
+	</package>
+</struts>

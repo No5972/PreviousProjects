@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+<title>欢迎进入学生信息管理系统</title>
+<link rel="stylesheet" href="switch.css" />
+</head>
+<body>
+<center><h1>欢迎进入学生信息管理系统</h1></center>
+<hr>
+<table style="width: 100%">
+<tr>
+	<td><a href="student.html"><div class="col">学生管理</div></a></td>
+	<td><a href="grade.html"><div class="col">成绩管理</div></a></td>
+	<td><a href="course.html"><div class="col">课程管理</div></a></td>
+	<td><a href="query.html"><div class="col">数据查询</div></a></td>
+	<td><a href="#"><div class="col">数据统计</div></a></td>
+</tr>
+</table>
+<hr>
+<h2>添加成绩：</h2>
+学号　：<input type="text" id="a_sno" /><br>
+课程名：<span id="select_courses"></span><!-- <select id="a_courses"> --></select><br>
+成绩　：<input type="number" step="0.1" id="a_grade" />
+<button id="a_submit">添加</button><span style="color: #f00;" id="a_alert"></span>
+
+<h2>删除成绩：</h2>
+课程名：<span id="select_courses_d"></span>学号　：<input type="text" id="d_sno" /><button id="d_open">打开</button><span style="color: #f00;" id="d_alert"></span><br>
+<div style="display:none" id="d_info">
+<p id="result"></p>
+<button id="d_submit">删除</button><span style="color: #f00;" id="d_alert"></span>
+</div>
+
+<h2>修改成绩：</h2>
+课程名：<span id="select_courses_c"></span>学号　：<input type="text" id="c_sno" /><button id="c_open">打开</button><span style="color: #f00;" id="d_alert"></span><br>
+<div style="display: none;">
+课程名：<select id="courses"></select><br>
+学号　：<input type="text" id="c_cno" /><br>
+成绩　：<input type="number" step="0.1" id="c_grade" /><br>
+<button id="c_submit">修改</button>
+</div>
+
+</body>
+<script src="jquery-3.1.1.js"></script>
+<script src="grade.js?ver=4"></script>
+</html>

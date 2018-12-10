@@ -1,0 +1,32 @@
+.auto_hidden {
+    width:204px;border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    position:absolute;
+    display:none;
+}
+.auto_show {
+    background-color: #000;
+    width:204px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    position:absolute;
+    z-index:9999; /* 设置对象的层叠顺序 */
+    display:block;
+}
+.auto_onmouseover{
+    color:#e6c89b;
+    background-color: #000;
+    width:99.5%;
+    border: 1px solid #44f;
+    border-radius: 2px;
+}
+.auto_onmouseout{
+    color:#e6c89b;
+    width:99%;
+    background-color: #000;
+    border: 1px solid #000;
+}

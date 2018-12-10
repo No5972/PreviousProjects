@@ -1,0 +1,24 @@
+.loginframe {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 13px;
+	background: #eee;
+	padding: 22px;
+}
+
+input {
+	border: solid 1px #080;
+	height: 21px;
+	margin-right: 5px;
+}
+
+.button {
+	background-color: #080;
+	border: solid 1px #080;
+	height: 21px;
+	color: #fff;
+}
+
+#prompt {
+	color: #f00;
+}

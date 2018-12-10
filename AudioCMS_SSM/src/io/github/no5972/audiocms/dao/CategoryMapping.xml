@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.github.no5972.audiocms.dao.CategoryDao">
+    <select id="selectAllCategories" resultType="io.github.no5972.audiocms.models.Category">
+    	select * from category
+    </select>
+    <delete id="deleteCategory" parameterType="int">
+    	delete from category where id=#{id}
+    </delete>
+    <insert id="addCategory" parameterType="String">
+    	insert into category set name=#{name}
+    </insert>
+    <update id="updateCategory">
+    	update category set name=#{name} where id=#{id}
+    </update>
+    <select id="selectCategoryById" resultType="io.github.no5972.audiocms.models.Category">
+    	select * from category where id=#{id}
+    </select>
+</mapper>

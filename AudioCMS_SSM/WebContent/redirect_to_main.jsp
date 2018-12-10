@@ -1,0 +1,1 @@
+<script>window.location.href="manage_main.php"</script>

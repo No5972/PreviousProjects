@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="io.github.no5972.models.News" table="news">
+		<id name="id"><generator class="increment"/></id>
+		<property name="title" length="100"/>
+		<property name="content" length="8192"/>
+		<property name="createTime"/>
+		<many-to-one name="category" column="cid" class="io.github.no5972.models.Category" cascade="save-update" lazy="false"/>
+	</class>
+</hibernate-mapping>

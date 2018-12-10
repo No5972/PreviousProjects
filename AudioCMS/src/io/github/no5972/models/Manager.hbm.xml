@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="io.github.no5972.models.Manager" table="manager">
+		<id name="id"><generator class="assigned"/></id>
+		<property name="account" length="20"/>
+		<property name="name" length="50"/>
+		<property name="password" length="20"/>
+		<property name="number"/>
+	</class>
+</hibernate-mapping>
