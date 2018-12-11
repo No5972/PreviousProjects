@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.github.no5972.dbsp.dao.AdminDao">
+    <select id="getLogin" resultType="io.github.no5972.dbsp.models.Admin">
+    	select * from admins where username=#{username} and password=#{password}
+    </select>
+    <update id="updatePassword">
+    	update admins set password=#{newPwd} where username=#{username}
+    </update>
+</mapper>
