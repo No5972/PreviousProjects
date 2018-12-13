@@ -1,0 +1,2 @@
+# Library Management System
+The project is based on Java SE Swing. The project uses Swing in order to devolop the GUI client, and implemented the complete managements of libraries including user management, book management, book category management, operator management, subscribing management, etc. What is used in this project is the original JDBC. The database used by this project is MySQL. What I am in duty is the devolopment operator management module.

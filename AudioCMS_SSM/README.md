@@ -1,5 +1,9 @@
-# AudioCMS_SSM
-maven dependencies not implemented yet!
+# Audio Reporting Portal Web CMS SSM Remix
+The project is what previous Audio Reporting Portal Web CMS remixed with SSM framework. All project codes are re-written with SSM framework. The page type, business logics, and UI are largely the same with before, but there are also some minor improvements like URL parameters legality judgement, JSP parameters legality judgement, the confirmation dialog box of the deleting operations. The database used by this project is MySQL. The project has adopted Git in order to control the versions. The entire project and all its business logics is devoloped by myself except the SSH framework JARs and audio combination JAR/audio combination server.
+
+Maven dependencies not implemented yet! ('cause Baidu Aip conflicts with Maven and SpringMVC 
+[![](https://img.shields.io/github/issues/detail/title/Baidu-AIP/java-sdk/22.svg)](https://github.com/Baidu-AIP/java-sdk/issues/22)
+)
 
 required libraries:
 <code>

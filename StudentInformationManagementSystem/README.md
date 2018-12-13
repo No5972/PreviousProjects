@@ -1,1 +1,3 @@
-Database System Course Project: Student Information Management System Not Finished
+# Database System Course Project: Student Information Management System Not Finished
+
+The project is based on JSP, jQuery and MySQL. The project has implemented the management of students' name, ID, sex, birthday, dept, courses' id, name, teacher, grades' student id, course id, and marks, including its Create-Read-Update-Delete (CRUD) operations. The project has fully taken advantage of the Ajax feature of jQuery in order to implement the querying and editing of the datas. The database used by this project is MySQL. The entire project's business logics, page handlers, persistence layer are devoloped by myself. <u>Project has not been finished yet - See the completion [StudentInformationManagementSystem_SSM](https://github.com/No5972/PreviousProjects/tree/master/StudentInformationManagementSystem_SSM)</u>
