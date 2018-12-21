@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>用户名 - JSP+AJAX聊天室 BY wujiuqier</title>
+<link rel="stylesheet" href="chatroom.css" />
+<script src="jquery-3.1.1.js"></script>
+<script src="chatroom.js?ver=27"></script>
+</head>
+<body>
+	<audio src="electric_lines.wav" id="alert"></audio>
+	<div class="top">
+		<table class="toptable" cellspacing="0">
+			<tr>
+				<td width="15%" class="topcell">
+					<center>
+						<div id="userlist"></div>
+					</center>
+				</td>
+				<td width="80%" class="topcell">
+					<div class="msgbox" id="msgs">
+						<font style="font-size: 14px;">欢迎光临聊天室，请遵守聊天室规则，不要使用不文明用语。</font><br />
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="bottom">
+		<table class="console">
+			<tr>
+				<td width="50%"><input type="hidden" id="userid" value="" />[<span
+					id="myname">用户名</span>]对<select id="targetId">
+						<option value="0">所有人</option>
+					</select>表情 <select id="emotion">
+						<option value="">无</option>
+						<option value="微笑着">微笑着</option>
+				</select>说：</td>
+				<td width="50%">字体颜色：<input type="color" id="color"
+					name="color" /></td>
+			</tr>
+			<tr>
+				<td width="50%" class="edit"><input type="text" id="content"
+					name="content" />
+				<button id="submit" onclick="submit1()">发送</button></td>
+				<td width="50%" class="button-right"><button id="exit"
+						onclick="logout()">退出聊天室</button>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

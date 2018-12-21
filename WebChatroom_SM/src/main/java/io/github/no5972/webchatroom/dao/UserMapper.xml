@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.github.no5972.webchatroom.dao.UserDao">
+	<select id="getAllUsers" resultType="io.github.no5972.webchatroom.models.User">
+		select * from user
+	</select>
+	<insert id="login">
+		<selectKey resultType="int" order="AFTER" keyProperty="id">
+			select LAST_INSERT_ID() as id   
+		</selectKey>
+		insert into user set name=#{name}
+	</insert>
+	<delete id="logout">
+		delete from user where id=#{id}
+	</delete>
+	<select id="isNameExists" resultType="io.github.no5972.webchatroom.models.User">
+		select * from user where name like #{name}
+	</select>
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.github.no5972.webchatroom.dao.MessageDao">
+	<select id="getNewMessages" resultType="io.github.no5972.webchatroom.models.Message">
+		select user1.name author, user2.name target, msg.* 
+		from (msg 
+		inner join user user1 on user1.id=msg.authorid 
+		left join user user2 on user2.id=msg.targetid) 
+		where date&gt;=#{date}
+		order by date
+	</select>
+	<insert id="insertMessage">
+		insert into msg set
+		issystem=#{issystem},
+		authorid=#{authorid},
+		date=#{date},
+		emotion=#{emotion},
+		targetid=#{targetid},
+		content=#{content},
+		color=#{color}
+	</insert>
+</mapper>
