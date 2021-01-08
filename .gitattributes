@@ -1,1 +1,6 @@
-*.js linguist-language=Java
+# *.js linguist-language=Java
+AudioCMS/WebContent/editor/* linguist-vendored
+AudioCMS_SSM/src/main/webapp/editor/* linguist-vendored
+jquery*.js linguist-vendored
+ForumHotspotTopicAnalysis/OUT_GRAPH linguist-vendored
+the-hell-emulator/jia.js linguist-vendored
